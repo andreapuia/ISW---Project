@@ -12,3 +12,6 @@ Membrii:
     
 Platforma de comunicare: Atlassian | Software Development and Collaboration Tools
    Link acces: https://cristinaioanacalin.atlassian.net/jira/software/projects/DEN/boards/3
+
+Diagrama aplicatiei:
+![](Application_diagram.png)
