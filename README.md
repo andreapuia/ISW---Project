@@ -5,10 +5,10 @@ Nume disciplina: ISW - Inginerie Software
 Nume proiect: Dental Office
 
 Membrii: 
-  Puia Andrea,
+  Bădiță Alexandru-Cristian,
   Călin Cristina-Ioana,
   Ghiuzan Otilia-Roxana,
-  Bădiță Alexandru-Cristian
-
+  Puia Andrea
+    
 Platforma de comunicare: Atlassian | Software Development and Collaboration Tools
    Link acces: https://cristinaioanacalin.atlassian.net/jira/software/projects/DEN/boards/3
