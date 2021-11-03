@@ -1,0 +1,24 @@
+﻿<Window x:Class="DentalOffice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Sign In" Height="521.002" Width="431.11" Icon="..\Resources\signIn.ico" Background="SteelBlue" ResizeMode="NoResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="509*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="label1" Content="Username:" HorizontalAlignment="Left" Margin="16,181,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
+        <Label Name="label2" Content="Password: " HorizontalAlignment="Left" Margin="16,282,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
+        <Label x:Name="label3" Content="WELCOME!" HorizontalAlignment="Left" Margin="124,11,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
+        <TextBox Name="nameBox" HorizontalAlignment="Left" Height="38" Margin="26,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" FontSize="20" Grid.Column="1"/>
+        <PasswordBox  Name="passwordBox" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="359" Height="38"  FontSize="20" Grid.Column="1"/>
+        <Button Name="signInBtn" Content="Sign In" HorizontalAlignment="Left" Margin="240,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold"  Grid.Column="1"/>
+        <Button Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Margin="26,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold"  Grid.Column="1"/>
+        <Image Grid.Column="1" Source="../Resources/tooth.png" HorizontalAlignment="Left" Height="100" Margin="158,66,0,0" VerticalAlignment="Top" Width="100" Visibility="Visible"/>
+
+
+    </Grid>
+</Window>
