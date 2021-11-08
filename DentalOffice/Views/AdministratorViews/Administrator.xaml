@@ -1,0 +1,51 @@
+﻿<Window x:Class="DentalOffice.Views.AdministratorVievs.Administrator"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:DentalOffice.ViewModels"
+        mc:Ignorable="d"
+        Title="Administrator" Height="454.022" Width="685" Background="SteelBlue" ResizeMode="NoResize">
+
+    <Grid>
+
+        <Label Content="{Binding CurrentAdminText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="38" Margin="399,39,0,0" VerticalAlignment="Top" Width="254" Background="White" FontSize="16" FontWeight="Bold" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"/>
+
+        <Button Name="addDoctorBtn" Content="ADD doctor" HorizontalAlignment="Left" Margin="8,376,0,0" VerticalAlignment="Top" Width="185" Height="34" FontSize="18" Background="White" Click="addDoctorBtn_Click" FontWeight="Heavy"/>
+        <Button Name="deleteDoctorBtn" Content="DELETE doctor" HorizontalAlignment="Left" Margin="209,376,0,0" VerticalAlignment="Top" Width="170" Height="34" FontSize="18" Background="White" Click="deleteDoctorBtn_Click" IsEnabled="False" FontWeight="Heavy"/>
+        <Button Name="addInterventionBtn" Content="ADD" Margin="557,197,10.4,0" VerticalAlignment="Top" Width="111" Height="40" FontWeight="Heavy" Background="Azure" Click="addInterventionBtn_Click"/>
+        <Button Name="deleteInterventionBtn" Content="DELETE" Margin="557,252,10.4,0" VerticalAlignment="Top" Width="111" Height="40" FontWeight="Heavy" Background="Azure" IsEnabled="False" Click="deleteInterventionPr_Click"/>
+        <Button Name="updateInterventionBtn" Content="UPDATE" Margin="557,311,10.4,0" VerticalAlignment="Top" Width="111" Height="40" FontWeight="Heavy" Background="Azure" IsEnabled="False" Click="updateInterventionBtn_Click"/>
+        <Button Name="checkPricesBtn" Content="CHECK PRICES" Margin="557,370,10.4,0" VerticalAlignment="Top" Width="111" Height="40" FontWeight="Heavy" Background="Azure" IsEnabled="False" Click="checkPricesBtn_Click"/>
+
+        <DataGrid Background="Azure" Margin="8,39,292.4,53.8" Name="Grid" ItemsSource="{Binding DoctorsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" SelectedItem="{Binding SelectedDoctor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="GridSelectionChanged" FontSize="16" CanUserAddRows="False" KeyUp="GridKeyUp" PreviewKeyDown="GridPreviewKeyDown">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding ID}" Width="auto" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="auto" />
+                <DataGridTextColumn Header="Password" Binding="{Binding Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="auto" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="auto"/>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <ListView ItemsSource="{Binding InterventionsList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding CurrentIntervention, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SelectionChanged="ListViewSelectionChanged" HorizontalAlignment="Left" Height="308" Margin="399,102,0,0" VerticalAlignment="Top" Width="145" FontSize="15" Background="Azure">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" Width="30" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="Name" Width="80" DisplayMemberBinding="{Binding Name}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Menu Width="auto" Margin="0,0,-0.6,390.8">
+            <MenuItem FontSize="15" Header="File">
+                <MenuItem Name="Gains" Header="Gains" FontSize="15" Click="Gains_Click"/>
+                <MenuItem Name="Occupancy" Header="Occupancy" FontSize="15" Click="Occupancy_Click"/>
+                <MenuItem Name="SignOut" Header="Sign out" FontSize="15" Click="SignOut_Click"/>
+            </MenuItem>
+        </Menu>
+        <Image Source="/DentalOffice;component/Resources/tooth.png" HorizontalAlignment="Left" Height="91" Margin="567,93,0,0" VerticalAlignment="Top" Width="91" Visibility="Visible" RenderTransformOrigin="0.446,-0.708"/>
+
+
+    </Grid>
+</Window>
