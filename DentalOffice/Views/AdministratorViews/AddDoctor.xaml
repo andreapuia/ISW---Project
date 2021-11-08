@@ -6,6 +6,8 @@
         mc:Ignorable="d"
         Title="Register" Height="414.423" Width="393.803" ResizeMode="NoResize" Background="Orange">
 
+    
+    
     <Grid Margin="0,-1,0.4,1.4">
         <Label Name="label2" Content="USERNAME" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
         <Label Name="label3" Content="FIRST NAME" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" FontSize="18"/>
