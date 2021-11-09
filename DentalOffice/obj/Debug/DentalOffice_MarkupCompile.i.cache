@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\ISW project\DentalOffice\App.xaml
-7602143630
+131269626677
 
 61910915675
 13-1505183044
-Views\AdministratorViews\UpdateIntervention.xaml;Views\AdministratorViews\AddDoctor.xaml;Views\AdministratorViews\AddIntervention.xaml;Views\AdministratorViews\Administrator.xaml;Views\AdministratorViews\CheckPrices.xaml;Views\AdministratorViews\Gains.xaml;Views\SignInW.xaml;
+Views\AdministratorViews\UpdateIntervention.xaml;Views\AdministratorViews\AddDoctor.xaml;Views\AdministratorViews\AddIntervention.xaml;Views\AdministratorViews\Administrator.xaml;Views\AdministratorViews\CheckPrices.xaml;Views\AdministratorViews\Gains.xaml;Views\DoctorViews\AddAppointment.xaml;Views\DoctorViews\AppPatient.xaml;Views\DoctorViews\Doctor.xaml;Views\DoctorViews\Interventions.xaml;Views\DoctorViews\Patients.xaml;Views\Occupancy.xaml;Views\SignInW.xaml;
 
-True
+False
 
