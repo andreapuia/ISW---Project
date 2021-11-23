@@ -1,10 +1,14 @@
-﻿<Window x:Class="DentalOffice.Views.AdministratorViews.CheckPrices"
+﻿<Window x:Class="DentalOffice.Views.AdministratorViews.CheckPricesW"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Check prices" Height="274.667" Width="603.733" ResizeMode="NoResize" Background="Orange">
+    <Window.DataContext>
+        <vms:PriceVM/>
+    </Window.DataContext>
     <Grid Margin="0,0,3.4,0">
         <Grid.RowDefinitions>
             <RowDefinition Height="73*"/>

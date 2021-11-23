@@ -12,13 +12,12 @@
         </Grid.ColumnDefinitions>
         <Label Name="label1" Content="Username:" HorizontalAlignment="Left" Margin="16,181,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
         <Label Name="label2" Content="Password: " HorizontalAlignment="Left" Margin="16,282,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
-        <Label x:Name="label3" Content="WELCOME!" HorizontalAlignment="Left" Margin="124,11,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
+        <Label x:Name="label3" Content="WELCOME BACK!" HorizontalAlignment="Left" Margin="76,16,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Black" Grid.Column="1"/>
         <TextBox Name="nameBox" HorizontalAlignment="Left" Height="38" Margin="26,235,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" FontSize="20" Grid.Column="1"/>
         <PasswordBox  Name="passwordBox" HorizontalAlignment="Left" Margin="26,332,0,0" VerticalAlignment="Top" Width="359" Height="38"  FontSize="20" Grid.Column="1"/>
-        <Button Name="signInBtn" Content="Sign In" HorizontalAlignment="Left" Margin="240,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold"  Grid.Column="1"/>
-        <Button Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Margin="26,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold"  Grid.Column="1"/>
+        <Button Name="signInBtn" Content="Sign In" HorizontalAlignment="Left" Margin="240,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold" Click="signInBtn_Click" Grid.Column="1"/>
+        <Button Name="exitBtn" Content="Exit" HorizontalAlignment="Left" Margin="26,404,0,0" VerticalAlignment="Top" Width="145" FontSize="18" Height="35"  Background="Azure"  FontWeight="DemiBold" Click="exitBtn_Click" Grid.Column="1"/>
         <Image Grid.Column="1" Source="../Resources/tooth.png" HorizontalAlignment="Left" Height="100" Margin="158,66,0,0" VerticalAlignment="Top" Width="100" Visibility="Visible"/>
-
 
     </Grid>
 </Window>

@@ -1,12 +1,12 @@
-﻿<Window x:Class="DentalOffice.Views.DoctorViews.Doctor"
+﻿<Window x:Class="DentalOffice.Views.DoctorViews.DoctorW"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-		xmlns:vms="clr-namespace:DentalOffice.ViewModels"
+        xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Doctor" Height="630.205" Width="785.769" ResizeMode="NoResize" Background="YellowGreen">
-	<Window.DataContext>
+    <Window.DataContext>
         <vms:DoctorVM/>
     </Window.DataContext>
     <Grid>
@@ -57,7 +57,7 @@
                 <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="auto"  IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
-
+      
 
     </Grid>
 </Window>

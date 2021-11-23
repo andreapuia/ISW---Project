@@ -1,4 +1,4 @@
-﻿<Window x:Class="DentalOffice.Views.AdministratorVievs.Administrator"
+﻿<Window x:Class="DentalOffice.Views.AdministratorW"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,6 +6,10 @@
         xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Administrator" Height="454.022" Width="685" Background="SteelBlue" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <vms:AdministratorVM/>
+    </Window.DataContext>
 
     <Grid>
 

@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{151532D7-61D2-4D5B-A65B-4A30F84DBFD6}</ProjectGuid>
+    <ProjectGuid>{D217F6A3-FE4D-4FEB-8CC3-AA7D3C6011E0}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>DentalOffice</RootNamespace>
     <AssemblyName>DentalOffice</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,22 +49,133 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsInput, Version=1.0.4.0, Culture=neutral, PublicKeyToken=9b287f7dc5073cad, processorArchitecture=MSIL">
+      <HintPath>..\packages\InputSimulator.1.0.4.0\lib\net20\WindowsInput.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Views\AdministratorViews\AddInterventionW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministratorViews\AdministratorW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministratorViews\AddDoctorW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministratorViews\CheckPricesW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministratorViews\GainsW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AdministratorViews\UpdateInterventionW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorViews\AddAppointmentW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorViews\AddPatientW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorViews\DoctorW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorViews\InterventionsW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OccupancyW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DoctorViews\PatientsW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SignInW.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\AdministratorViews\UpdateIntervention.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="Enum\Deleted.cs" />
+    <Compile Include="Enum\Util.cs" />
+    <Compile Include="Models\DataAccessLayer\AgendaDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\AppointmentDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\%40Helper.cs" />
+    <Compile Include="Models\DataAccessLayer\InterventionDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\PatientDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\PriceDAL.cs" />
+    <Compile Include="Models\DataAccessLayer\UserDAL.cs" />
+    <Compile Include="Models\EntityLayer\Agenda.cs" />
+    <Compile Include="Models\EntityLayer\Appointment.cs" />
+    <Compile Include="Models\EntityLayer\Intervention.cs" />
+    <Compile Include="Models\EntityLayer\Patient.cs" />
+    <Compile Include="Models\EntityLayer\Price.cs" />
+    <Compile Include="Models\EntityLayer\User.cs" />
+    <Compile Include="Enum\Role.cs" />
+    <Compile Include="ViewModels\AdministratorVM.cs" />
+    <Compile Include="ViewModels\AppointmentVM.cs" />
+    <Compile Include="ViewModels\BaseVM.cs" />
+    <Compile Include="ViewModels\DoctorVM.cs" />
+    <Compile Include="ViewModels\InterventionVM.cs" />
+    <Compile Include="ViewModels\PatientVM.cs" />
+    <Compile Include="ViewModels\PriceVM.cs" />
+    <Compile Include="Views\AdministratorViews\AddInterventionW.xaml.cs">
+      <DependentUpon>AddInterventionW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorViews\AdministratorW.xaml.cs">
+      <DependentUpon>AdministratorW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorViews\AddDoctorW.xaml.cs">
+      <DependentUpon>AddDoctorW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorViews\CheckPricesW.xaml.cs">
+      <DependentUpon>CheckPricesW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorViews\GainsW.xaml.cs">
+      <DependentUpon>GainsW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdministratorViews\UpdateInterventionW.xaml.cs">
+      <DependentUpon>UpdateInterventionW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorViews\AddAppointmentW.xaml.cs">
+      <DependentUpon>AddAppointmentW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorViews\AddPatientW.xaml.cs">
+      <DependentUpon>AddPatientW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorViews\DoctorW.xaml.cs">
+      <DependentUpon>DoctorW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorViews\InterventionsW.xaml.cs">
+      <DependentUpon>InterventionsW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OccupancyW.xaml.cs">
+      <DependentUpon>OccupancyW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DoctorViews\PatientsW.xaml.cs">
+      <DependentUpon>PatientsW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SignInW.xaml.cs">
       <DependentUpon>SignInW.xaml</DependentUpon>
+      <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +196,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,59 +206,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\AdministratorViews\AddDoctor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdministratorViews\AddIntervention.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdministratorViews\Administrator.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdministratorViews\CheckPrices.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\AdministratorViews\Gains.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoctorViews\AddAppointment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoctorViews\AppPatient.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoctorViews\Doctor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoctorViews\Interventions.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\DoctorViews\Patients.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Occupancy.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\SignInW.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Resources\signIn.ico" />
+  </ItemGroup>
+  <ItemGroup>
     <Resource Include="Resources\tooth.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
