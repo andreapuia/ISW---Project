@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Interventions" Height="381.6" Width="777.6" Background="MediumAquamarine" ResizeMode="NoResize">
-
+	<Window.DataContext>
+        <vms:InterventionVM/>
+    </Window.DataContext>
     <Grid>
 
         <Button Name="backBtn" Content="BACK" HorizontalAlignment="Left" Margin="0,302,-0.4,0" VerticalAlignment="Top" FontWeight="Heavy" Width="762" FontSize="15" Height="43" Click="backBtn_Click" Background="Orange"/>

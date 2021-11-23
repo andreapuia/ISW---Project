@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Doctor" Height="630.205" Width="785.769" ResizeMode="NoResize" Background="YellowGreen">
-
+	<Window.DataContext>
+        <vms:DoctorVM/>
+    </Window.DataContext>
     <Grid>
         <Label Content="{Binding CurrentDoctorText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Height="38" Margin="10,33,0,0" VerticalAlignment="Top" Width="556" Background="White" FontSize="16" FontWeight="Bold" BorderThickness="1" BorderBrush="Black" HorizontalContentAlignment="Center"/>
         <Button Name="addPatientBtn" Content="ADD patient" HorizontalAlignment="Left" Margin="585,151,0,0" VerticalAlignment="Top" Width="174" Height="54" Click="addPatientBtn_Click" FontSize="17" FontWeight="Heavy" BorderBrush="Black"/>

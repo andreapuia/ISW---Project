@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:vms="clr-namespace:DentalOffice.ViewModels"
         mc:Ignorable="d"
         Title="Add appointment" Height="388.8" Width="579.021" ResizeMode="NoResize" Background="Orange">
-
+	<Window.DataContext>
+        <vms:AppointmentVM/>
+    </Window.DataContext>
     <Grid>
         <Calendar Name="calendar" SelectedDatesChanged="calendarSelectedDatesChanged" SelectedDate="{Binding CurrentDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  HorizontalAlignment="Left" Margin="375,63,0,0" VerticalAlignment="Top" Height="168"/>
         <Label Name="label1" Content="{Binding CurrentPatientText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Left" Margin="375,10,0,0" VerticalAlignment="Top" Width="179" BorderBrush="Black" BorderThickness="2" Background="AliceBlue" Height="30" HorizontalContentAlignment="Center" FontWeight="Heavy" FontSize="12"/>
