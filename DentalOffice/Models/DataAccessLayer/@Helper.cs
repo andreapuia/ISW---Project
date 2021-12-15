@@ -14,6 +14,5 @@ namespace DentalOffice.Models.DataAccesslayer
                 return new SqlConnection(connectionString);
             }
         }
-
     }
 }

@@ -34,7 +34,6 @@ namespace DentalOffice.Models
             this.Deleted = Deleted;
         }
 
-    
         public override string ToString()
         {
             return "( ID: " + this.ID + ", username: " + this.Username + ", password: " + this.Password + ", name: " + this.FirstName + " " + this.LastName + ", role: " + this.Role + ", deleted: " + this.Deleted + " )" ;

@@ -36,9 +36,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 reader.Close();
                 return result;
             }
-
         }
-
         public static ObservableCollection<Patient> GetPatientsFromADoctorPr(User doctor)
         {
             using (SqlConnection con = Helper.Connection)
@@ -71,9 +69,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 reader.Close();
                 return result;
             }
-
         }
-        
         public static void UpdatePatientPr(Patient patient)
         {
             using (SqlConnection con = Helper.Connection)
@@ -153,7 +149,6 @@ namespace DentalOffice.Models.DataAccesslayer
             }
         }
 
-
         public static decimal GetCostPacient(Patient patient)
         {
             decimal cost = 0;
@@ -162,7 +157,6 @@ namespace DentalOffice.Models.DataAccesslayer
             {
                 cost += AppointmentDAL.GetCostAppointment(appointment);
             }
-
             return cost;
         }
     }

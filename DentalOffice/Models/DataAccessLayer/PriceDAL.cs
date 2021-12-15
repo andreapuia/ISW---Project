@@ -88,7 +88,6 @@ namespace DentalOffice.Models.DataAccesslayer
                         price.EndDateStr = price.EndDate.ToString("yyyy-MM-dd");
                     }
                     
-                    
                     result.Add(price);
                 }
                 reader.Close();

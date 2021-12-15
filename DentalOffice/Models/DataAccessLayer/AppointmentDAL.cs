@@ -168,10 +168,6 @@ namespace DentalOffice.Models.DataAccesslayer
                 }
             }
             return cost;
-
         }
-
-        
-
     }
 }

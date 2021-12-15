@@ -10,7 +10,6 @@ namespace DentalOffice.Models
 
         public Deleted Deleted { get; set; }
 
-
         public Intervention() { }
 
         public Intervention(int ID, string Name, Deleted Deleted)
