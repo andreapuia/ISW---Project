@@ -28,6 +28,5 @@ namespace DentalOffice.Models.EntityLayer
             return "( ID: " + ID + ", ID appointment: " + this.IDappointment + ", ID intervention: " + this.IDintervention + ", deleted: " + this.Deleted + " )";
         }
 
-
     }
 }

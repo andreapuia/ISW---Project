@@ -22,7 +22,6 @@ namespace DentalOffice.Models
 
         public string EndDateStr { get; set; }
 
-
         public Price() { }
 
         public Price(int ID, int IDintervention, decimal Value, DateTime StartDate, DateTime EndDate, Deleted Deleted)
@@ -35,9 +34,6 @@ namespace DentalOffice.Models
             this.Deleted = Deleted;
         }
 
-       
-
-        
         public override string ToString()
         {
             return "( ID: " + this.ID +", IDintervention: " + this.IDintervention + ", value: " + this.Value + " €, start date: " + this.StartDate.ToString("yyyy-MM-dd") + ", end date: " + this.EndDate.ToString("yyyy-MM-dd")  + " )";

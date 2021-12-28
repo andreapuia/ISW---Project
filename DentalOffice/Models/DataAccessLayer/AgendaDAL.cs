@@ -26,7 +26,6 @@ namespace DentalOffice.Models.DataAccesslayer
             }
         }
 
-
         public static ObservableCollection<Agenda> GetAgendasPr()
         {
             using (SqlConnection con = Helper.Connection)
@@ -54,9 +53,6 @@ namespace DentalOffice.Models.DataAccesslayer
                 reader.Close();
                 return result;
             }
-
         }
-
-
     }
 }

@@ -32,7 +32,6 @@ namespace DentalOffice.Models
             this.Deleted = Deleted;
         }
 
-              
         public override string ToString()
         {
             return "( ID: " + ID + ", ID patient: " + this.IDpatient + ", date: " + this.Date.ToString("yyyy-MM-dd") + ", hour: " + this.Hour + ", deleted: " + this.Deleted + " )";
