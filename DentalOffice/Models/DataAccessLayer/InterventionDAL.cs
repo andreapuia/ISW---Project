@@ -29,7 +29,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 cmd.Parameters.Add(EndDatePar);
                 con.Open();
                 cmd.ExecuteNonQuery();
-                
+
                 if ((OutputPar.Value as int?) == 1)
                 {
                     MessageBox.Show("Error at start date!", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -45,7 +45,14 @@ namespace DentalOffice.Models.DataAccesslayer
 
             }
         }
-
+        public static Intervention generateIntervention(int ID, string Name, Deleted Deleted)
+        {
+            Intervention intervention = new Intervention();
+            intervention.ID = ID;
+            intervention.Name = Name;
+            intervention.Deleted = Deleted;
+            return intervention;
+        }
         public static ObservableCollection<Intervention> GetInterventionsPr()
         {
             using (SqlConnection con = Helper.Connection)
@@ -74,7 +81,7 @@ namespace DentalOffice.Models.DataAccesslayer
 
             }
         }
-        
+
         public static void DeleteInterventionPr(Intervention intervention)
         {
             using (SqlConnection con = Helper.Connection)
@@ -94,7 +101,7 @@ namespace DentalOffice.Models.DataAccesslayer
         {
             using (SqlConnection con = Helper.Connection)
             {
-              
+
                 SqlCommand cmd = new SqlCommand("updateInterventionPr", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
@@ -134,19 +141,19 @@ namespace DentalOffice.Models.DataAccesslayer
                 }
             }
         }
-        
+
         public static ObservableCollection<Intervention> GetInterventionsFromAnAppPr(Appointment appointment)
         {
             using (SqlConnection con = Helper.Connection)
             {
                 SqlCommand cmd = new SqlCommand("getInterventionsFromAnAppPr", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                
+
 
                 SqlParameter IDPar = new SqlParameter("@idAppointment", appointment.ID);
                 cmd.Parameters.Add(IDPar);
 
-                
+
                 con.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
                 ObservableCollection<Intervention> result = new ObservableCollection<Intervention>();
@@ -164,12 +171,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 }
                 reader.Close();
                 return result;
-
             }
         }
-
-
-      
-
     }
 }

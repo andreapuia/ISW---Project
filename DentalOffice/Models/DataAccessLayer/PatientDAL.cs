@@ -8,19 +8,19 @@ namespace DentalOffice.Models.DataAccesslayer
 {
     public class PatientDAL
     {
-       // public static Patient generatePatient(int ID, int iDdocctor)
-        //{
-        //    Patient patient = new Patient();
-        //    patient.ID = (int)(reader[0]);
-        //    patient.IDdoctor = (int)(reader[1]);
-        //    patient.FirstName = reader.GetString(2);
-        //    patient.LastName = reader.GetString(3);
-       //     patient.CNP = reader.GetString(4);
-       //     patient.City = reader.GetString(5);
-       //     patient.Deleted = Util.DeletedToString(reader.GetString(6));
-       //     patient.Cost = PatientDAL.GetCostPacient(patient);
-       //     return patient;
-      //  }
+        public static Patient generatePatient(int ID, int IDdoctor, string FirstName, string LastName, string CNP, string City, Deleted Deleted, decimal Cost)
+        {
+            Patient patient = new Patient();
+            patient.ID = ID;
+            patient.IDdoctor = IDdoctor;
+            patient.FirstName = FirstName;
+            patient.LastName = LastName;
+            patient.CNP = CNP;
+            patient.City = City;
+            patient.Deleted = Deleted;
+            patient.Cost = Cost;
+            return patient;
+        }
         public static ObservableCollection<Patient> GetPatientsPr()
         {
             using (SqlConnection con = Helper.Connection)
@@ -65,7 +65,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 ObservableCollection<Patient> result = new ObservableCollection<Patient>();
 
                 SqlDataReader reader = cmd.ExecuteReader();
-                
+
                 while (reader.Read())
                 {
                     Patient patient = new Patient();
@@ -103,10 +103,10 @@ namespace DentalOffice.Models.DataAccesslayer
 
                 con.Open();
                 cmd.ExecuteNonQuery();
-                
+
             }
         }
-        
+
         public static void DeletePatientPr(Patient patient)
         {
             using (SqlConnection con = Helper.Connection)
@@ -147,7 +147,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 con.Open();
                 cmd.ExecuteNonQuery();
 
-                switch(OutputPar.Value as int?)
+                switch (OutputPar.Value as int?)
                 {
                     case 0:
                         MessageBox.Show("Operation successfully completed!", "Message", MessageBoxButton.OK, MessageBoxImage.Information);

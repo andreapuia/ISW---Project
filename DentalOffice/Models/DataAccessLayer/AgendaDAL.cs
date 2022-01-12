@@ -22,10 +22,17 @@ namespace DentalOffice.Models.DataAccesslayer
                 cmd.Parameters.Add(idInterventionPar);
                 con.Open();
                 cmd.ExecuteNonQuery();
-
             }
         }
-
+        public static Agenda generateAgenda(int ID, int IDappointment, int IDintervention, Deleted Deleted)
+        {
+            Agenda agenda = new Agenda();
+            agenda.ID = ID;
+            agenda.IDappointment = IDappointment;
+            agenda.IDintervention = IDintervention;
+            agenda.Deleted = Deleted;
+            return agenda;
+        }
         public static ObservableCollection<Agenda> GetAgendasPr()
         {
             using (SqlConnection con = Helper.Connection)

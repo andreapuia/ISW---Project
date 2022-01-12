@@ -48,7 +48,7 @@ namespace DentalOffice.Models.DataAccesslayer
                 }
                 reader.Close();
 
-                if(OutputPar.Value as int? == 1)
+                if (OutputPar.Value as int? == 1)
                 {
                     return null;
                 }
@@ -56,7 +56,17 @@ namespace DentalOffice.Models.DataAccesslayer
                 return price;
             }
         }
-
+        public static Price generatePrice(int ID, int IDintervention, decimal Value, DateTime StartDate, DateTime EndDate, Deleted Deleted)
+        {
+            Price price = new Price();
+            price.ID = ID;
+            price.IDintervention = IDintervention;
+            price.Value = Value;
+            price.StartDate = StartDate;
+            price.EndDate = EndDate;
+            price.Deleted = Deleted;
+            return price;
+        }
         public static ObservableCollection<Price> GetPricesPr()
         {
             using (SqlConnection con = Helper.Connection)
@@ -87,7 +97,6 @@ namespace DentalOffice.Models.DataAccesslayer
                     {
                         price.EndDateStr = price.EndDate.ToString("yyyy-MM-dd");
                     }
-                    
                     result.Add(price);
                 }
                 reader.Close();
