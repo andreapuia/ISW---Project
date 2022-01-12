@@ -44,7 +44,7 @@ namespace DentalOffice.ViewModels
         public Patient SelectedPatient
         {
             get { return this.selectedPatient; }
-            set { this.selectedPatient = value; selectedPatient.FullName = selectedPatient.FirstName + " " + selectedPatient.LastName; OnPropertyChanged("SelectedPatient"); }
+            set { this.selectedPatient = value; }
         }
 
         public ObservableCollection<Appointment> AppointmentsList

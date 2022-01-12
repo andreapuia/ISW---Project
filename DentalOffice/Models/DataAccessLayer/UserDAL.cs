@@ -9,6 +9,18 @@ namespace DentalOffice.Models.DataAccesslayer
 {
     public class UserDAL
     {
+        public static User generateUser(int ID, string Username, string Password, string FirstName, string LastName, Role Role, Deleted Deleted)
+        {
+            User user = new User();
+            user.ID = ID;
+            user.Username = Username;
+            user.Password = Password;
+            user.FirstName = FirstName;
+            user.LastName = LastName;
+            user.Role = Role;
+            user.Deleted = Deleted;
+            return user;
+        }
         public static User GetUserPr(string Username, string Password)
         {
             using (SqlConnection con = Helper.Connection)
@@ -32,12 +44,8 @@ namespace DentalOffice.Models.DataAccesslayer
                 while(reader.Read())
                 {
                     user.ID = (int)(reader[0]);
-                    user.Username = reader.GetString(1);
-                    user.Password = reader.GetString(2);
-                    user.FirstName = reader.GetString(3);
-                    user.LastName = reader.GetString(4);
-                    user.Role = Util.RoleToString(reader.GetString(5));
-                    user.Deleted = Util.DeletedToString(reader.GetString(6));
+                    user = generateUser((int)(reader[0]), reader.GetString(1), reader.GetString(2), reader.GetString(3), reader.GetString(4), Util.RoleToString(reader.GetString(5)), Util.DeletedToString(reader.GetString(6)));
+
                 }
                 user.FullName = user.FirstName + " " + user.LastName;
                 reader.Close();

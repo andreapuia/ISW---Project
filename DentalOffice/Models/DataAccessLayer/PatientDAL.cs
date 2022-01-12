@@ -8,6 +8,19 @@ namespace DentalOffice.Models.DataAccesslayer
 {
     public class PatientDAL
     {
+       // public static Patient generatePatient(int ID, int iDdocctor)
+        //{
+        //    Patient patient = new Patient();
+        //    patient.ID = (int)(reader[0]);
+        //    patient.IDdoctor = (int)(reader[1]);
+        //    patient.FirstName = reader.GetString(2);
+        //    patient.LastName = reader.GetString(3);
+       //     patient.CNP = reader.GetString(4);
+       //     patient.City = reader.GetString(5);
+       //     patient.Deleted = Util.DeletedToString(reader.GetString(6));
+       //     patient.Cost = PatientDAL.GetCostPacient(patient);
+       //     return patient;
+      //  }
         public static ObservableCollection<Patient> GetPatientsPr()
         {
             using (SqlConnection con = Helper.Connection)
